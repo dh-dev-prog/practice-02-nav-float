@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width = device-width, initial-scale = 1">
+    <title>Nav Float</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://use.fontawesome.com/8439fcad67.js"></script>
+  </head>
+  <body>
+
+
+
+        <header>
+          <h2>Menu</h2>
+          <i id="menu" class="fa fa-bars fa-1x" aria-hidden="true"></i>
+
+          <nav>
+            <ul>
+              <li class="hidden hide-0"><a href="#">Home</a></li>
+              <li class="hidden hide-1"><a href="#">Contact</a></li>
+              <li class="hidden hide-2"><a href="#">About</a></li>
+            </ul>
+          </nav>
+        </header>
+
+
+    <script>
+      const menu = document.getElementById('menu');
+      const menuEl = document.querySelectorAll('.hidden');
+      console.log(menuEl);
+      menu.addEventListener('click', () => {
+        console.log('some');
+        menuEl.forEach(el => {
+          el.classList.toggle('show');
+        })
+      });
+    </script>
+
+  </body>
+</html>
