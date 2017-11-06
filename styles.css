@@ -30,7 +30,6 @@ a {
   background-color: #B5D99C;
 }
 li {
-  position: relative;
   margin: 0;
   height: 100px;
   line-height: 100px;
@@ -47,6 +46,10 @@ i {
   cursor: pointer;
   z-index: 10;
 }
+
+
+
+/*States*/
 .hidden {
   position: absolute;
   left: 0;
@@ -73,4 +76,33 @@ i {
 .hide-2.show {
   transform: translateY(202px);
   transition-delay: .1s;
+}
+
+@media only screen and (min-width: 460px) {
+  nav {
+    float: right;
+  }
+  h2, nav li {
+    position: static;
+    float: left;
+  }
+  h2 {
+    padding: 0 30px;
+  }
+  nav a {
+    float: left;
+    padding: 0 30px;
+  }
+  .fa.fa-bars {
+    /*inline propreties take priority on css so cant trigger display none on <i>*/
+    display: none;
+  }
+  .hidden {
+    position: static;
+    transform: translateY(0);
+    transition: translateY 0s linear;
+    transition: opacity .3s linear;
+    opacity: 1;
+    z-index: 0;
+  }
 }
